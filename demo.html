@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Demo Toggle Attributes Javascript and JQuery Plugin</title>
+  <link href="css/css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+  <div class="demo" id="simple-1">
+    <h3>Example with checkbox and submit button, with 'disabled' attribute</h3>
+    <span>
+      <input class="checkbox" type="checkbox">I agree to <a>Terms of service</a>
+    </span><br/>
+
+    <input type="submit" value="Submit" disabled class="margin-top-20">
+    <br>
+  </div>
+
+  <div class="demo margin-top-20" id="simple-2">
+    <h3>Replace for jQuery.toggleClass function</h3>
+    <span>
+      <input class="checkbox" type="checkbox">Change element colour
+    </span><br/>
+
+    <input type="submit" value="Submit">
+    <br>
+  </div>
+
+  <div class="demo margin-top-20" id="simple-3">
+    <h3>Even works with attributes that have no value</h3>
+    <span>
+      <input class="checkbox" type="checkbox">Readonly?
+    </span><br/>
+
+    <input type="text" value="Try to edit when readonly attribute was added" class="margin-top-20">
+    <br>
+  </div>
+
+  <div class="source margin-top-20">
+    <!-- HTML generated using hilite.me -->
+    <div
+        style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre
+        style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>script type<span
+        style="color: #666666">=</span><span style="color: #BA2121">&quot;text/javascript&quot;</span><span
+        style="color: #666666">&gt;</span> <span style="color: #408080; font-style: italic">// No jQuery</span>
+<span style="color: #408080; font-style: italic">// For multiple checkboxes</span>
+<span style="color: #008000">document</span>.querySelectorAll(<span style="color: #BA2121">&#39;input[type=&quot;checkbox&quot;]&#39;</span>).forEach(<span
+          style="color: #008000; font-weight: bold">function</span> (node) {
+  node.addEventListener(<span style="color: #BA2121">&#39;change&#39;</span>, <span
+          style="color: #008000; font-weight: bold">function</span> () {
+    z(<span style="color: #BA2121">&#39;input[type=&quot;submit&quot;]&#39;</span>).toggleAttr(<span
+          style="color: #BA2121">&#39;disabled&#39;</span>);
+  }, <span style="color: #008000; font-weight: bold">false</span>);
+});
+<span style="color: #408080; font-style: italic">// Or with one checkbox only</span>
+<span style="color: #008000">document</span>.querySelector(<span style="color: #BA2121">&#39;input[type=&quot;checkbox&quot;]&#39;</span>).addEventListener(<span
+          style="color: #BA2121">&#39;change&#39;</span>, <span
+          style="color: #008000; font-weight: bold">function</span> () {
+      z(<span style="color: #BA2121">&#39;input[type=&quot;submit&quot;]&#39;</span>).toggleAttr(<span
+          style="color: #BA2121">&#39;disabled&#39;</span>);
+    },
+    <span style="color: #008000; font-weight: bold">false</span>);
+<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt;</span>
+</pre>
+    </div>
+  </div>
+  <div class="source margin-top-20">
+    <!-- HTML generated using hilite.me -->
+    <div
+        style="background: #f8f8f8; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre
+        style="margin: 0; line-height: 125%"><span style="color: #666666">&lt;</span>script type<span
+        style="color: #666666">=</span><span style="color: #BA2121">&quot;text/javascript&quot;</span><span
+        style="color: #666666">&gt;</span> <span style="color: #408080; font-style: italic">// Having jQuery</span>
+$(<span style="color: #BA2121">&#39;input[type=&quot;checkbox&quot;]&#39;</span>).change(<span
+          style="color: #008000; font-weight: bold">function</span> () {
+  $(<span style="color: #BA2121">&#39;input[type=&quot;submit&quot;]&#39;</span>).toggleAttr(<span
+          style="color: #BA2121">&#39;disabled&#39;</span>);
+});
+<span style="color: #666666">&lt;</span><span style="border: 1px solid #FF0000">/script&gt;</span>
+</pre>
+    </div>
+
+
+  </div>
+
+</div>
+<script src="js/toggleAttributes.js"></script>
+<script src="js/demo.js"></script>
+</body>
+</html>
